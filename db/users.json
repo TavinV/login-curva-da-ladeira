@@ -1,0 +1,54 @@
+{
+  "usuarios": [
+    {
+      "id": "0",
+      "nome": "Pedro",
+      "sobrenome": "Calais",
+      "email": "pedrocalais@gmail.com",
+      "login": "pedrolagum",
+      "senha": "descendoacurvadaladeira",
+      "rg": "287203074",
+      "adm": true
+    },
+    {
+      "id": "1",
+      "nome": "Otávio",
+      "sobrenome": "Vinícius",
+      "email": "otaviov@gmail.com",
+      "login": "tavinnevida",
+      "senha": "12345678",
+      "rg": "528563750",
+      "adm": false
+    },
+    {
+      "id": "9e5f",
+      "nome": "João",
+      "sobrenome": "Gonça",
+      "rg": "112312312",
+      "email": "joaogonca@gmail.com",
+      "senha": "123456789",
+      "login": "Gonca",
+      "adm": false
+    },
+    {
+      "id": "0b00",
+      "nome": "Igor",
+      "sobrenome": "Teixeira",
+      "rg": "917139012",
+      "email": "igurts@gmail.com",
+      "senha": "13612831273",
+      "login": "igor",
+      "adm": false
+    },
+    {
+      "id": "b9ad",
+      "nome": "Lucas",
+      "sobrenome": "Gomes",
+      "rg": "219371923",
+      "email": "gometalenda@gmail.com",
+      "senha": "gometas",
+      "login": "gomes",
+      "adm": false
+    }
+  ]
+}
