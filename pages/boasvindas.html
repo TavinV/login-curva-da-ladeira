@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo - ShopNow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>ShopNow</h1>
+        </div>
+        <nav class="mobile-menu">
+            <ul>
+                <li><a href="boas-vindas.html">Home</a></li>
+                <li><a href="logout.html">Sair</a></li>
+            </ul>
+        </nav>
+        <div class="user-menu">
+            <span class="user-info">Bem vindo, João</span>
+            <div class="hamburger" onclick="toggleMenu()">
+                &#9776;
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <div class="container">
+        <div class="welcome-message">
+            <h2>Bem-vindo à ShopNow, João!</h2>
+            <p>Estamos felizes por tê-lo conosco. Explore as nossas ofertas e aproveite a experiência de compras personalizada.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 ShopNow. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.mobile-menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

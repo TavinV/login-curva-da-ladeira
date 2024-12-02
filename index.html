@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopNow - Página de Login</title>
+    <link rel="stylesheet" href="pages/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>ShopNow</h1>
+        </div>
+        <div class="user-menu">
+            <span class="user-info"></span>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <div class="container">
+        <div class="login-form">
+            <h2>Login</h2>
+            <form>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+            <p>Não tem uma conta? <a href="pages/cadastro.html">Cadastre-se aqui</a></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.mobile-menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+<footer>
+    <p>&copy; 2024 ShopNow. Todos os direitos reservados.</p>
+</footer>
+</html>

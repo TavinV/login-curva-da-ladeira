@@ -2,8 +2,8 @@ const form = document.querySelector("form")
 import * as requests from "../modules/requests.js" 
 
 const redirecionamentos = {
-    adm: "../../pages/dashboard.html",
-    user: "../../pages/home.html"
+    adm: "../pages/admin.html",
+    user: "../pages/boasvindas.html"
 }
 
 form.addEventListener('submit', async (e) => {

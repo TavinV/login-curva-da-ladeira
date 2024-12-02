@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração - ShopNow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>ShopNow</h1>
+        </div>
+        <nav class="mobile-menu">
+            <ul>
+                <li><a href="boas-vindas.html">Home</a></li>
+                <li><a href="admin.html">Administração</a></li>
+                <li><a href="logout.html">Sair</a></li>
+            </ul>
+        </nav>
+        <div class="user-menu">
+            <span class="user-info">Bem vindo, Admin</span>
+            <div class="hamburger" onclick="toggleMenu()">
+                &#9776;
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <div class="container">
+        <h2>Administração de Usuários</h2>
+
+        <!-- Filtro de busca por RG -->
+        <div class="search">
+            <input type="text" placeholder="Buscar por RG" id="search-input">
+            <button>Buscar</button>
+        </div>
+
+        <!-- Cards de Usuários -->
+        <div class="user-cards">
+            <div class="card">
+                <h3>João Silva</h3>
+                <p>Email: joao@exemplo.com</p>
+                <p>RG: 12345678</p>
+                <div class="card-actions">
+                    <button class="edit-btn" onclick="openEditModal('João Silva', 'joao@exemplo.com', '12345678')">Editar</button>
+                    <button class="delete-btn" onclick="openDeleteModal('João Silva')">Apagar</button>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Ana Costa</h3>
+                <p>Email: ana@exemplo.com</p>
+                <p>RG: 87654321</p>
+                <div class="card-actions">
+                    <button class="edit-btn" onclick="openEditModal('Ana Costa', 'ana@exemplo.com', '87654321')">Editar</button>
+                    <button class="delete-btn" onclick="openDeleteModal('Ana Costa')">Apagar</button>
+                </div>
+            </div>
+            <!-- Adicione mais cards conforme necessário -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 ShopNow. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Popup de Editar Usuário -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeEditModal()">&times;</span>
+            <h2>Editar Usuário</h2>
+            <form id="editForm">
+                <input type="text" id="editName" placeholder="Nome" required>
+                <input type="email" id="editEmail" placeholder="Email" required>
+                <input type="text" id="editRG" placeholder="RG" required>
+                <button type="submit">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Popup de Confirmar Exclusão -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeDeleteModal()">&times;</span>
+            <h2>Tem certeza que deseja excluir o usuário?</h2>
+            <p id="deleteUserName"></p>
+            <div class="modal-actions">
+                <button class="confirm-btn" onclick="deleteUser()">Sim, excluir</button>
+                <button class="cancel-btn" onclick="closeDeleteModal()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 ShopNow. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.mobile-menu');
+            menu.classList.toggle('active');
+        }
+
+        // Funções para controlar o popup de edição
+        function openEditModal(name, email, rg) {
+            document.getElementById("editName").value = name;
+            document.getElementById("editEmail").value = email;
+            document.getElementById("editRG").value = rg;
+            document.getElementById("editModal").style.display = "block";
+        }
+
+        function closeEditModal() {
+            document.getElementById("editModal").style.display = "none";
+        }
+
+        // Funções para controlar o popup de exclusão
+        function openDeleteModal(name) {
+            document.getElementById("deleteUserName").innerText = name;
+            document.getElementById("deleteModal").style.display = "block";
+        }
+
+        function closeDeleteModal() {
+            document.getElementById("deleteModal").style.display = "none";
+        }
+
+        function deleteUser() {
+            alert("Usuário excluído com sucesso!");
+            closeDeleteModal();
+        }
+    </script>
+</body>
+</html>
