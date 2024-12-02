@@ -49,6 +49,26 @@
       "senha": "gometas",
       "login": "gomes",
       "adm": false
+    },
+    {
+      "id": "9533",
+      "nome": "Otavio",
+      "sobrenome": "Vinicius",
+      "rg": "129423064",
+      "email": "gometaalenda@gmail.com",
+      "senha": "adyq09we7129ega",
+      "login": "tavinnevida123",
+      "adm": false
+    },
+    {
+      "id": "fb75",
+      "nome": "Yan",
+      "sobrenome": "Martins",
+      "rg": "917539012",
+      "email": "yanmartins@gmail.com",
+      "senha": "yanmartins01",
+      "login": "Yanzito",
+      "adm": false
     }
   ]
 }

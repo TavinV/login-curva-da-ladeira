@@ -28,17 +28,29 @@
 
     <!-- Conteúdo Principal -->
     <div class="container">
+        <popup>
+            <div class="message">
+                <h2>
+                    Usuário foi registrado com sucesso
+                </h2>
+                <a href="../index.html">
+                    Login
+                </a>
+            </div>
+        </popup>
         <div class="login-form">
             <h2>Cadastro</h2>
-            <form>
-                <input type="text" id="nome" placeholder="Nome" required autocomplete="off">
-                <input type="text" id="sobrenome" placeholder="Sobrenome" required autocomplete="off">
-                <input type="text" id="login" minlength="5" placeholder="Login" required autocomplete="off">
-                <input type="text" id="rg" placeholder="RG sem pontuação" required minlength="" autocomplete="off">
-                <input type="email" id="email" placeholder="Email" required autocomplete="off">
-                <input type="password" id="senha" minlength="8" placeholder="Senha" required autocomplete="off">
-                <button type="submit">Entrar</button>
-            </form>
+            <div class="register-form">
+                <input  type="text" id="nome" placeholder="Nome" required autocomplete="off">
+                <input  type="text" id="sobrenome" placeholder="Sobrenome" required autocomplete="off">
+                <input  type="text" id="login" minlength="5" placeholder="Login" required autocomplete="off">
+                <input  type="text" id="rg" minlength="9" maxlength="9" placeholder="RG sem pontuação" required minlength="" autocomplete="off">
+                <input  type="email" id="email" placeholder="Email" required autocomplete="off">
+                <input  type="password" id="senha" minlength="8" placeholder="Senha" required autocomplete="off">
+                
+                <button id="registrar">Registrar</button>
+                <p class="erro"></p>
+            </div>
             <p>Já tem uma conta? <a href="../index.html">Faça login aqui</a></p>
         </div>
     </div>
@@ -51,6 +63,7 @@
             menu.classList.toggle('active');
         }
     </script>
+    <script type="module" src="../scripts/register.js"></script>
 </body>
 <footer>
     <p>&copy; 2024 ShopNow. Todos os direitos reservados.</p>

@@ -1,20 +1,17 @@
 const form = document.querySelector("form")
 import * as requests from "../modules/requests.js" 
-
-const redirecionamentos = {
-    adm: "../pages/admin.html",
-    user: "../pages/boasvindas.html"
-}
+import redirect from "../modules/redirecionar.js"
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
-
+    
     const [dados, erro] = await requests.GET();
+
     if (erro) {
         console.error("Erro ao obter os usuários:", erro);
         return;
     }
-
+    
     const users = dados;
     
     // Buscar usuário e comparar as senhas
@@ -26,11 +23,36 @@ form.addEventListener('submit', async (e) => {
     
     if (conta.length > 0){
         const contaverificada = conta[0]
-        const url = contaverificada.adm ? redirecionamentos.adm : redirecionamentos.user
         
-        localStorage.setItem("id", contaverificada.id)
-        window.location.href = url
+        redirect(contaverificada)
     } else {
         document.querySelector('.erro').innerText = 'Usuário e(ou) senha incorretos!'
     }
 });
+
+// Checando se há um usuário logado
+
+async function userLogado(){
+    let id = localStorage.getItem("id")
+
+    if (id){
+        const [dados, erro] = await requests.GET();
+        
+        if (erro) {
+            console.error("Erro ao obter os usuários:", erro);
+            return;
+        }
+
+        const users = dados;
+        const conta = users.filter(u => u.id == id)
+
+        if (conta.length > 0){
+            console.log("logado")
+            redirect(conta[0])
+        } else {
+            localStorage.removeItem("id")
+        }
+    }
+}
+
+window.addEventListener("load", userLogado)
