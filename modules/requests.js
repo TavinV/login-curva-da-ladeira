@@ -12,20 +12,20 @@ export async function GET() {
     }
 }
 
-async function verificarContaJaRegistrada(login, email, rg){
+async function verificarContaJaRegistrada(login, email, rg) {
     const [dados, erro] = await GET();
 
     if (erro) {
         console.error("Erro ao obter os usuários:", erro);
         return;
     }
-    
+
     const users = dados;
 
-    let loginJaExistente = users.filter(u=> u.login == login)
-    let emailJaExistente = users.filter(u=> u.email == email)
-    let rgJaExistente = users.filter(u=> u.rg == rg)
-    
+    let loginJaExistente = users.filter(u => u.login == login)
+    let emailJaExistente = users.filter(u => u.email == email)
+    let rgJaExistente = users.filter(u => u.rg == rg)
+
     console.log(emailJaExistente)
     // Retorna o primeiro erro encontrado ou true se não houver problemas
     if (loginJaExistente.length > 0) return [false, "Esse login já foi cadastrado."];
@@ -36,27 +36,27 @@ async function verificarContaJaRegistrada(login, email, rg){
     return [true, null];
 }
 
-export async function POST_REGISTER(nome,sobrenome,rg,email,senha,login){
+export async function POST_REGISTER(nome, sobrenome, rg, email, senha, login) {
     //Enviar um função que puxa o valor de uma API - FETCH
 
-    let info = [nome, sobrenome,rg,senha,login, email]
+    let info = [nome, sobrenome, rg, senha, login, email]
     let missingFields = info.filter(f => f == null || f == "")
-    
-    const user = {nome, sobrenome, rg, email, senha, login, adm: false}
+
+    const user = { nome, sobrenome, rg, email, senha, login, adm: false }
 
     if (missingFields.length > 0) {
         return [null, "Campos obrigatórios faltando"]
-    } 
+    }
 
     else {
         const contaPodeSerRegistrada = await verificarContaJaRegistrada(login, email, rg)
         console.log(login, email, senha)
-        
+
         if (!contaPodeSerRegistrada[0]) {
             return [null, contaPodeSerRegistrada[1]]
         }
-        
-        try {       
+
+        try {
             fetch(api, {
                 method: 'POST', //Metodo POST HTTP
                 headers: {
@@ -64,12 +64,29 @@ export async function POST_REGISTER(nome,sobrenome,rg,email,senha,login){
                 },
                 body: JSON.stringify(user) //Dados a serem enviados e convertidos
             })
-            .then(resposta => resposta.JSON) //Converte a resposta para JSON
+                .then(resposta => resposta.JSON) //Converte a resposta para JSON
             return ["201", null]
-            
+
         } catch (error) {
             return [null, 'Erro interno do servidor']
         }
-        
+
     }
+}
+
+export async function DELETE(id) {
+    fetch(`${api}/${id}`, {
+        method: 'DELETE', //Metodo PUT HTTP
+    })
+        .then(resposta => resposta.JSON) //Converte a resposta para JSON
+}
+
+export async function PUT(id, body) {
+    fetch(`${api}/${id}`, {
+        method: 'PUT', //Metodo PUT HTTP
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+    })
 }

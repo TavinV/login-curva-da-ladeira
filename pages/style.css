@@ -4,8 +4,10 @@
 :root {
     --cor-branco: #FFFFFF;
     --cor-preto: #1D1D1D;
-    --cor-destaque-1: #FF7A00; /* Laranja */
-    --cor-destaque-2: #0044CC; /* Azul */
+    --cor-destaque-1: #FF7A00;
+    /* Laranja */
+    --cor-destaque-2: #0044CC;
+    /* Azul */
     --cor-branco-escuro: #F4F4F4;
     --cor-cinza-claro: #E0E0E0;
     --cor-cinza-escuro: #B0B0B0;
@@ -122,18 +124,18 @@ header .hamburger {
 }
 
 /* Formulários */
-form, .register-form {
+form,
+.register-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
     width: 100%;
-    max-width: 400px;
     padding-top: 20px;
-    background-color: var(--cor-branco);
     border-radius: 10px;
 }
 
 .login-form {
+    width: 550px;
     padding: 50px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -141,10 +143,28 @@ form, .register-form {
 }
 
 input {
-    padding: 10px;
+    padding: 20px;
     font-size: 16px;
     border: 1px solid var(--cor-cinza-claro);
     border-radius: 5px;
+    outline: none;
+}
+
+input:focus {
+    border: 1px solid var(--cor-destaque-1);
+}
+
+
+input:user-invalid {
+    border-color: red;
+}
+
+input:user-valid {
+    border-color: #34ff4fd3;
+}
+
+input::placeholder {
+    color: var(--cor-texto);
 }
 
 button {
@@ -220,7 +240,8 @@ footer {
     margin-top: 15px;
 }
 
-.edit-btn, .delete-btn {
+.edit-btn,
+.delete-btn {
     padding: 8px 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -275,7 +296,8 @@ footer {
     font-weight: bold;
     transition: color 0.3s ease;
 }
-.modal h2{
+
+.modal h2 {
     margin-top: 30px;
 }
 
@@ -317,7 +339,8 @@ footer {
     justify-content: space-between;
 }
 
-.confirm-btn, .cancel-btn {
+.confirm-btn,
+.cancel-btn {
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -342,7 +365,7 @@ footer {
     background-color: #D0D0D0;
 }
 
-#deleteUserName{
+#deleteUserName {
     padding: 30px 0px;
 }
 
@@ -370,7 +393,7 @@ popup {
     display: none;
 }
 
-popup .active{
+popup .active {
     display: block;
     width: 100vw;
     height: 100vh;

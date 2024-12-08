@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administração - ShopNow</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Header -->
-    <header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Administração - ShopNow</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
         <div class="logo">
             <h1>ShopNow</h1>
         </div>
@@ -30,42 +30,22 @@
     <!-- Conteúdo Principal -->
     <div class="container">
         <h2>Administração de Usuários</h2>
-
         <!-- Filtro de busca por RG -->
         <div class="search">
-            <input type="text" placeholder="Buscar por RG" id="search-input">
-            <button>Buscar</button>
+            <input type="text" placeholder="Buscar por RG" id="searchInput">
+            <button id="searchButton">Buscar</button>
         </div>
 
         <!-- Cards de Usuários -->
         <div class="user-cards">
-            <div class="card">
-                <h3>João Silva</h3>
-                <p>Email: joao@exemplo.com</p>
-                <p>RG: 12345678</p>
-                <div class="card-actions">
-                    <button class="edit-btn" onclick="openEditModal('João Silva', 'joao@exemplo.com', '12345678')">Editar</button>
-                    <button class="delete-btn" onclick="openDeleteModal('João Silva')">Apagar</button>
-                </div>
-            </div>
-            <div class="card">
-                <h3>Ana Costa</h3>
-                <p>Email: ana@exemplo.com</p>
-                <p>RG: 87654321</p>
-                <div class="card-actions">
-                    <button class="edit-btn" onclick="openEditModal('Ana Costa', 'ana@exemplo.com', '87654321')">Editar</button>
-                    <button class="delete-btn" onclick="openDeleteModal('Ana Costa')">Apagar</button>
-                </div>
-            </div>
-            <!-- Adicione mais cards conforme necessário -->
         </div>
     </div>
-
+    
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 ShopNow. Todos os direitos reservados.</p>
     </footer>
-
+    
     <!-- Popup de Editar Usuário -->
     <div id="editModal" class="modal">
         <div class="modal-content">
@@ -73,13 +53,15 @@
             <h2>Editar Usuário</h2>
             <form id="editForm">
                 <input type="text" id="editName" placeholder="Nome" required>
+                <input type="text" id="editLastName" placeholder="Sobrenome" required>
                 <input type="email" id="editEmail" placeholder="Email" required>
                 <input type="text" id="editRG" placeholder="RG" required>
                 <button type="submit">Salvar Alterações</button>
             </form>
         </div>
     </div>
-
+    
+    
     <!-- Popup de Confirmar Exclusão -->
     <div id="deleteModal" class="modal">
         <div class="modal-content">
@@ -87,25 +69,32 @@
             <h2>Tem certeza que deseja excluir o usuário?</h2>
             <p id="deleteUserName"></p>
             <div class="modal-actions">
-                <button class="confirm-btn" onclick="deleteUser()">Sim, excluir</button>
+                <button id="confirm-delete-button" class="confirm-btn">Sim, excluir</button>
                 <button class="cancel-btn" onclick="closeDeleteModal()">Cancelar</button>
             </div>
         </div>
     </div>
-
+    
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 ShopNow. Todos os direitos reservados.</p>
     </footer>
-
+    
     <script>
         function toggleMenu() {
             const menu = document.querySelector('.mobile-menu');
             menu.classList.toggle('active');
-        }
+        }        
 
-        
+        function closeEditModal() {
+            document.getElementById("editModal").style.display = "none";
+        }
+        function closeDeleteModal() {
+            document.getElementById("deleteModal").style.display = "none";
+        }
     </script>
-    <script type="module" src="../scripts/admindashboard.js"></script>
+    
+    <script type="module" src="../scripts/dashboard.js"></script>
+    <script type="module" src="../scripts/loadinfoadm.js"></script>
 </body>
 </html>

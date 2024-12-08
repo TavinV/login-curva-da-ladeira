@@ -11,24 +11,14 @@
       "adm": true
     },
     {
-      "id": "1",
       "nome": "Otávio",
       "sobrenome": "Vinícius",
-      "email": "otaviov@gmail.com",
-      "login": "tavinnevida",
-      "senha": "12345678",
       "rg": "528563750",
-      "adm": false
-    },
-    {
-      "id": "9e5f",
-      "nome": "João",
-      "sobrenome": "Gonça",
-      "rg": "112312312",
-      "email": "joaogonca@gmail.com",
-      "senha": "123456789",
-      "login": "Gonca",
-      "adm": false
+      "email": "otavioviniciusads@gmail.com",
+      "senha": "12345678",
+      "login": "tavinnevida",
+      "adm": false,
+      "id": "1"
     },
     {
       "id": "0b00",
@@ -51,16 +41,6 @@
       "adm": false
     },
     {
-      "id": "9533",
-      "nome": "Otavio",
-      "sobrenome": "Vinicius",
-      "rg": "129423064",
-      "email": "gometaalenda@gmail.com",
-      "senha": "adyq09we7129ega",
-      "login": "tavinnevida123",
-      "adm": false
-    },
-    {
       "id": "fb75",
       "nome": "Yan",
       "sobrenome": "Martins",
@@ -69,6 +49,16 @@
       "senha": "yanmartins01",
       "login": "Yanzito",
       "adm": false
+    },
+    {
+      "nome": "Telma",
+      "sobrenome": "Alves",
+      "rg": "219301278",
+      "email": "telmaalves@gmail.com",
+      "senha": "telminha123",
+      "login": "telminhaadm",
+      "adm": false,
+      "id": "e04d"
     }
   ]
 }
